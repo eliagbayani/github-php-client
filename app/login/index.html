@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>The jQuery Example</title>
+  
+  <!-- used local copy
+  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  -->
+  <script type = "text/javascript" src = "../js/jquery.min.js"></script>
+  
+  
+  <script type = "text/javascript" language = "javascript">
+    $(document).ready(function() {
+      $("#driver").click(function(event){
+        var username = $("#username").val();
+        var password = $("#password").val();
+        $("#stage").load('result.php', {"username":username, "password":password} );
+        $("#login_form").hide();
+        });
+    });
+  </script>
+</head>
+
+<body>
+  <div id = "login_form">
+    <p>Enter your GitHub username and password to login:</p>
+    Username: <input type = "input"    id = "username"     size = "40" /><br />
+    Password: <input type = "password" id = "password" size = "40" /><br /><br />
+    <input type = "button"   id = "driver"   value = "Login" />
+  </div>
+  <div id = "stage" style = "background-color:cc0;"></div>
+</body>
+</html>
