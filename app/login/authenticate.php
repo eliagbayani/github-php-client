@@ -3,7 +3,7 @@
 $params =& $_GET;
 if(!$params) $params =& $_POST;
 
-
+error_reporting(E_ALL);
 // error_reporting(0); // Turn off all error reporting -> Turned off because wrong login credentials gives a fatal error in github api that isn't captured cleanly
 include_once(dirname(__FILE__) . "/../../client/GitHubClient.php");
 
@@ -17,9 +17,9 @@ if($user = $client->users->getSingleUser($username))
     if($realname = getProtectedValue($user, "name")) {}
     else $realname = $username;
 
-    echo "<br>Logged in OK<br>";
-    echo "<br>Welcome $realname<br>";
-    if($src = getProtectedValue($user, "avatar_url")) echo "<br><img src='$src'><br>";
+    echo "<br>Logged in OK<br> ";
+    echo "<br>Welcome $realname<br> ";
+    if($src = getProtectedValue($user, "avatar_url")) echo "<br><img src='$src'><br> ";
 }
 
 function getProtectedValue($obj, $name)

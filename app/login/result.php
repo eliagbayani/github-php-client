@@ -9,13 +9,14 @@ if(!$params) $params =& $_POST;
 // echo "<pre>"; print_r($params); echo "</pre>";
 if(!authenticate($params))
 {
-    echo "\n\nInvalid credentials...\n\n";
+    echo "<div class='help-block'>Invalid credentials</div>";
+    echo "<br><a href=''>Please try again</a><br><br>";
 }
 else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
     $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php";
-    echo "<br><a href='$url'>Go to FreshData</a><br>";
+    echo "<br><a href='$url'>Go to FreshData</a><br><br> ";
 }
 
 function authenticate($params)
@@ -27,7 +28,7 @@ function authenticate($params)
     if(stripos($html, 'Fatal error') !== false) return false; //string is found
     else
     {
-        echo "<hr>$html<hr>";
+        echo $html;
         return true;
     }
 }

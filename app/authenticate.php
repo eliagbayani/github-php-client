@@ -1,5 +1,6 @@
 <?php
-/*
+/* a place to test things:
+
 https://developer.github.com/libraries/
 https://github.com/tan-tan-kanarek/github-php-client
 
@@ -17,14 +18,20 @@ include_once(dirname(__FILE__) . "/../client/GitHubClient.php");
 // exit;
 
 // /*
-$username = "eliagbayanix";
-$password = "erja1325x";
+// $username = "eliagbayanix";
+// $password = "erja1325x";
 
 // $username = "eli-agbayani";
 // $password = "erja173";
 // 
-// $username = "jhammock";
-// $password = "secret";
+$username = "jhammock";
+$password = "kkk";
+
+$username = "jhpoelen";
+$password = "k";
+
+$username = "a";
+$password = "";
 
 
 $client = new GitHubClient();
