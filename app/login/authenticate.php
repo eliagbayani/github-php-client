@@ -1,5 +1,4 @@
 <?php
-
 $params =& $_GET;
 if(!$params) $params =& $_POST;
 
