@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if( $_REQUEST["username"] ) $username = $_REQUEST['username'];
+//if( $_REQUEST["username"] ) $username = $_REQUEST['username']; //another option to pass params
 
 $params =& $_GET;
 if(!$params) $params =& $_POST;
@@ -15,8 +15,8 @@ if(!authenticate($params))
 else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
-    $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php";
-    echo "<br>Proceed to <a href='$url'>Fresh Data - Monitors maintenance</a><br><br> ";
+    $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?admin_view=";
+    echo "<br>Proceed to <a href='$url'>Fresh Data - Monitors admin page</a><br><br> ";
 }
 
 function authenticate($params)
@@ -36,5 +36,4 @@ function authenticate($params)
         else return false;
     }
 }
-
 ?>

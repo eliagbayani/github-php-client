@@ -2,7 +2,6 @@
 <head>
   <title>GitHub Login</title>
   
-  
   <!-- used local copy instead
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,18 +14,16 @@
     $(document).ready(function() {
       $("#driver").click(function(event){
         
-        
         //$('.form-group').removeClass('has-error'); // remove the error class
         $('.help-block').remove(); // remove the error text
         
         var username = $("#username").val();
         var password = $("#password").val();
         
-        if(!username) 
+        if(!username)
         {
           // $('#stage').addClass('has-error'); // add the error class to show red input
           $('#stage').append('<div class="help-block">Please enter Username</div>');
-          
         }
         if(!password) $('#stage').append('<div class="help-block">Please enter Password</div>');
         
@@ -41,19 +38,17 @@
     });
   </script>
 </head>
-
 <body>
   <div align="center">
-      <div><br>Fresh Data - Monitors maintenance uses GitHub credentials</div>
+      <div><br>Fresh Data - Monitors admin page needs a GitHub account to access</div>
       <div><img src="../images/github_logo.png"></div>
       <div id = "login_form">
           <p>Enter your GitHub username and password:</p><br />
-          Username: <input type = "input"    id = "username"     size = "40" /><br /><br />
-          Password: <input type = "password" id = "password" size = "40" /><br /><br />
+          Username: <input type = "input"    id = "username"  size = "40" /><br /><br />
+          Password: <input type = "password" id = "password"  size = "40" /><br /><br />
           <button id="driver" type="submit" class="btn btn-success">Login</button>
-          <!--
-          <span class="fa fa-arrow-right"></span>
-          -->
+          <button id="cancel" type="submit" class="btn btn-success" onClick="javascript:history.go(-1)">Cancel</button>
+
       </div>
       <div id = "stage" style = "background-color:white;"></div>
   </div>
