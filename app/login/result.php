@@ -16,7 +16,7 @@ else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
     $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php";
-    echo "<br><a href='$url'>Proceed to Fresh Data - Monitors maintenance</a><br><br> ";
+    echo "<br>Proceed to <a href='$url'>Fresh Data - Monitors maintenance</a><br><br> ";
 }
 
 function authenticate($params)
