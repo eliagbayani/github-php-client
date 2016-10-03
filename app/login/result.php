@@ -28,8 +28,12 @@ function authenticate($params)
     if(stripos($html, 'Fatal error') !== false) return false; //string is found
     else
     {
-        echo $html;
-        return true;
+        if(in_array($username, array("eliagbayani", "eli-agbayani", "jhammock", "jhpoelen"))) //TODO put this list of valid usernames in a hidden text file (e.g. .userlist.txt)
+        {
+            echo $html;
+            return true;
+        }
+        else return false;
     }
 }
 
