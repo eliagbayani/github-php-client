@@ -1,9 +1,9 @@
 <?php
+require_once("../config/settings.php");
+
 $params =& $_GET;
 if(!$params) $params =& $_POST;
 
-error_reporting(E_ALL);
-// error_reporting(0); // Turn off all error reporting -> Turned off because wrong login credentials gives a fatal error in github api that isn't captured cleanly
 include_once(dirname(__FILE__) . "/../../client/GitHubClient.php");
 
 $username = $params['username'];
