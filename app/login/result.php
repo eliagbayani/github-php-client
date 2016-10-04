@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("../config/settings.php");
 
 //if( $_REQUEST["username"] ) $username = $_REQUEST['username']; //another option to pass params
 
@@ -28,12 +29,19 @@ function authenticate($params)
     if(stripos($html, 'Fatal error') !== false) return false; //string is found
     else
     {
-        if(in_array($username, array("eliagbayani", "eli-agbayani", "jhammock", "jhpoelen"))) //TODO put this list of valid usernames in a hidden text file (e.g. .userlist.txt)
+        // if(in_array($username, array("eliagbayani", "xxx", "jhammock", "jhpoelen"))) //TODO put this list of valid usernames in a hidden text file (e.g. .userlist.txt)
+
+        $valid_usernames = explode(",", VALID_USERNAMES);
+        if(in_array($username, $valid_usernames))
         {
             echo $html;
             return true;
         }
-        else return false;
+        else
+        {
+            echo "<br>Please contact " . DEVELOPER_EMAIL . " to be given access to Fresh Data - Monitors admin page.<br><br>";
+            return false;
+        }
     }
 }
 ?>

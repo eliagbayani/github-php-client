@@ -27,6 +27,6 @@ foreach($repos as $repo)
         /* @var $commit GitHubCommit */
         echo "\n" . get_class($commit) . " - Sha: " . $commit->getSha() . "\n";
     }
-    
-    
 }
+?>
+
