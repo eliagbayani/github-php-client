@@ -16,7 +16,7 @@ if(!authenticate($params))
 else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
-    $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=admin";
+    $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=".$params['view_type'];
     echo "<br>Proceed to <a href='$url'>Fresh Data - Monitors admin page</a><br><br> ";
 }
 
