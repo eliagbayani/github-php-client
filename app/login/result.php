@@ -17,7 +17,9 @@ else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
     $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=".$params['view_type'];
-    echo "<br>Proceed to <a href='$url'>Fresh Data - Monitors admin page</a><br><br> ";
+    
+    if($params['view_type'] == 'admin') echo "<br>Proceed to <a href='$url'>Fresh Data: Monitors - Admin</a><br><br> ";
+    elseif($params['view_type'] == 'scistarter') echo "<br>Proceed to <a href='$url'>Fresh Data: SciStarter - Admin</a><br><br> ";
 }
 
 function authenticate($params)
@@ -39,7 +41,7 @@ function authenticate($params)
         }
         else
         {
-            echo "<br>Please contact " . DEVELOPER_EMAIL . " to be given access to Fresh Data - Monitors admin page.<br><br>";
+            echo "<br>Please contact " . DEVELOPER_EMAIL . " to be given access to Fresh Data: Admin pages.<br><br>";
             return false;
         }
     }
