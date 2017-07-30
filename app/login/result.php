@@ -16,6 +16,8 @@ if(!authenticate($params))
 else
 {
     $_SESSION["freshdata_user_logged_in"] = true;
+    $_SESSION["github_username"] = $params['username'];
+    
     $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=".$params['view_type'];
     
     if($params['view_type'] == 'admin') echo "<br>Proceed to <a href='$url'>Fresh Data: Monitors - Admin</a><br><br> ";

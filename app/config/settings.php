@@ -1,6 +1,6 @@
 <?php
 define('DEVELOPER_EMAIL', 'eagbayani@eol.org');
-define('VALID_USERNAMES', "eliagbayani,jhammock,jhpoelen"); //TODO put this list of valid usernames in a hidden text file (e.g. .userlist.txt) and gitignore it.
+define('VALID_USERNAMES', "eliagbayani,jhammock,jhpoelen,eli-agbayani"); //TODO put this list of valid usernames in a hidden text file (e.g. .userlist.txt) and gitignore it.
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
