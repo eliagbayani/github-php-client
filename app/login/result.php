@@ -18,7 +18,7 @@ else
     $_SESSION["freshdata_user_logged_in"] = true;
     $_SESSION["github_username"] = $params['username'];
     
-    $url = "http://" . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=".$params['view_type'];
+    $url = HTTP_PROTOCOL . $_SERVER['SERVER_NAME'] . "/FreshData/index.php?view_type=".$params['view_type'];
     
     if($params['view_type'] == 'admin') echo "<br>Proceed to <a href='$url'>Fresh Data: Monitors - Admin</a><br><br> ";
     elseif($params['view_type'] == 'scistarter') echo "<br>Proceed to <a href='$url'>Fresh Data: SciStarter - Admin</a><br><br> ";
@@ -28,7 +28,7 @@ function authenticate($params)
 {
     $username = $params['username'];
     $password = $params['password'];
-    $url = "http://" . $_SERVER['SERVER_NAME'] . "/github-php-client/app/login/authenticate.php?username=$username&password=$password";
+    $url = HTTP_PROTOCOL . $_SERVER['SERVER_NAME'] . "/github-php-client/app/login/authenticate.php?username=$username&password=$password";
     $html = file_get_contents($url);
     if(stripos($html, 'Fatal error') !== false) return false; //string is found
     else
